@@ -132,7 +132,7 @@ releases:
       # Delete configmap if already exists
       - events: ["prepare"]
         command: "sh"
-        args: ["-c", "if kubectl get configmap pelican-env-synchronizer -n prod; then kubectl delete configmap pelican-env-synchronizer --namespace {{ .Environment.Name }}; fi"]
+        args: ["-c", "if kubectl get configmap pelican-env-synchronizer -n prod && [ -f /etc/environment ]; then kubectl delete configmap pelican-env-synchronizer --namespace {{ .Environment.Name }}; fi"]
       # Create configmap with env values
       - events: ["preapply"]
         command: "sh"
