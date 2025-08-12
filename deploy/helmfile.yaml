@@ -118,9 +118,9 @@ releases:
       - git::https://github.com/TourmalineCore/pelican-db-backupper.git@/ci/values.yaml?ref=c0a082d6a2f1340e5056c764d5ff771517f00421
       - values-pelican-db-backupper.yaml.gotmpl
 
-  - name: pelican-env-synchronizer2
+  - name: pelican-env-synchronizer
     labels:
-      app: pelican-env-synchronizer2
+      app: pelican-env-synchronizer
     wait: true
     chart: pelican-env-synchronizer/pelican-env-synchronizer
     values:
